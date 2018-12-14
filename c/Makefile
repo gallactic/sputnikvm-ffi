@@ -8,7 +8,7 @@ else
 endif
 
 build:
-	cd ffi && cargo build --release --no-default-features --features "std rlp"
+	cd ffi && cargo build --release
 	cp ffi/target/release/$(PREFIX)sputnikvm_ffi.$(LIB) $(PREFIX)sputnikvm.$(LIB)
 	cp ffi/target/release/$(PREFIX)sputnikvm_ffi.$(DLL) $(PREFIX)sputnikvm.$(DLL) | true
 
