@@ -160,32 +160,32 @@ extern sputnikvm_vm_t *
 sputnikvm_new_eip160(sputnikvm_transaction transaction, sputnikvm_header_params header);
 
 /**
- * Create a new frontier morden patch EVM instance using the given
+ * Create a new frontier modern patch EVM instance using the given
  * transaction and header parameters.
  */
 extern sputnikvm_vm_t *
-sputnikvm_new_morden_frontier(sputnikvm_transaction transaction, sputnikvm_header_params header);
+sputnikvm_new_modern_frontier(sputnikvm_transaction transaction, sputnikvm_header_params header);
 
 /**
- * Create a new homestead morden patch EVM instance using the given
+ * Create a new homestead modern patch EVM instance using the given
  * transaction and header parameters.
  */
 extern sputnikvm_vm_t *
-sputnikvm_new_morden_homestead(sputnikvm_transaction transaction, sputnikvm_header_params header);
+sputnikvm_new_modern_homestead(sputnikvm_transaction transaction, sputnikvm_header_params header);
 
 /**
- * Create a new EIP150 morden patch EVM instance using the given
+ * Create a new EIP150 modern patch EVM instance using the given
  * transaction and header parameters.
  */
 extern sputnikvm_vm_t *
-sputnikvm_new_morden_eip150(sputnikvm_transaction transaction, sputnikvm_header_params header);
+sputnikvm_new_modern_eip150(sputnikvm_transaction transaction, sputnikvm_header_params header);
 
 /**
- * Create a new EIP160 morden patch EVM instance using the given
+ * Create a new EIP160 modern patch EVM instance using the given
  * transaction and header parameters.
  */
 extern sputnikvm_vm_t *
-sputnikvm_new_morden_eip160(sputnikvm_transaction transaction, sputnikvm_header_params header);
+sputnikvm_new_modern_eip160(sputnikvm_transaction transaction, sputnikvm_header_params header);
 
 /**
  * Create a new frontier custom patch EVM instance using the given

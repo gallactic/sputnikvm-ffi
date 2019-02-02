@@ -409,11 +409,11 @@ func NewEIP160(transaction *Transaction, header *HeaderParams) *VM {
 	return vm
 }
 
-func NewMordenFrontier(transaction *Transaction, header *HeaderParams) *VM {
+func NewModernFrontier(transaction *Transaction, header *HeaderParams) *VM {
 	ctransaction, cinput := toCTransaction(transaction)
 	cheader := ToCHeaderParams(header)
 
-	cvm := C.sputnikvm_new_morden_frontier(*ctransaction, *cheader)
+	cvm := C.sputnikvm_new_modern_frontier(*ctransaction, *cheader)
 	C.free(cinput)
 
 	vm := new(VM)
@@ -422,11 +422,11 @@ func NewMordenFrontier(transaction *Transaction, header *HeaderParams) *VM {
 	return vm
 }
 
-func NewMordenHomestead(transaction *Transaction, header *HeaderParams) *VM {
+func NewModernHomestead(transaction *Transaction, header *HeaderParams) *VM {
 	ctransaction, cinput := toCTransaction(transaction)
 	cheader := ToCHeaderParams(header)
 
-	cvm := C.sputnikvm_new_morden_homestead(*ctransaction, *cheader)
+	cvm := C.sputnikvm_new_modern_homestead(*ctransaction, *cheader)
 	C.free(cinput)
 
 	vm := new(VM)
@@ -435,11 +435,11 @@ func NewMordenHomestead(transaction *Transaction, header *HeaderParams) *VM {
 	return vm
 }
 
-func NewMordenEIP150(transaction *Transaction, header *HeaderParams) *VM {
+func NewModernEIP150(transaction *Transaction, header *HeaderParams) *VM {
 	ctransaction, cinput := toCTransaction(transaction)
 	cheader := ToCHeaderParams(header)
 
-	cvm := C.sputnikvm_new_morden_eip150(*ctransaction, *cheader)
+	cvm := C.sputnikvm_new_modern_eip150(*ctransaction, *cheader)
 	C.free(cinput)
 
 	vm := new(VM)
@@ -448,11 +448,11 @@ func NewMordenEIP150(transaction *Transaction, header *HeaderParams) *VM {
 	return vm
 }
 
-func NewMordenEIP160(transaction *Transaction, header *HeaderParams) *VM {
+func NewModernEIP160(transaction *Transaction, header *HeaderParams) *VM {
 	ctransaction, cinput := toCTransaction(transaction)
 	cheader := ToCHeaderParams(header)
 
-	cvm := C.sputnikvm_new_morden_eip160(*ctransaction, *cheader)
+	cvm := C.sputnikvm_new_modern_eip160(*ctransaction, *cheader)
 	C.free(cinput)
 
 	vm := new(VM)

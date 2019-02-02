@@ -37,17 +37,17 @@ pub static CALL_ACTION: CAction = 0;
 #[no_mangle]
 pub static CREATE_ACTION: CAction = 1;
 
-pub struct MordenAccountPatch;
-impl AccountPatch for MordenAccountPatch {
+pub struct ModernAccountPatch;
+impl AccountPatch for ModernAccountPatch {
     fn initial_nonce() -> U256 { U256::from(1048576) }
     fn initial_create_nonce() -> U256 { Self::initial_nonce() }
     fn empty_considered_exists() -> bool { true }
 }
 
-pub type MordenFrontierPatch = FrontierPatch<MordenAccountPatch>;
-pub type MordenHomesteadPatch = HomesteadPatch<MordenAccountPatch>;
-pub type MordenEIP150Patch = EIP150Patch<MordenAccountPatch>;
-pub type MordenEIP160Patch = EIP160Patch<MordenAccountPatch>;
+pub type ModernFrontierPatch = FrontierPatch<ModernAccountPatch>;
+pub type ModernHomesteadPatch = HomesteadPatch<ModernAccountPatch>;
+pub type ModernEIP150Patch = EIP150Patch<ModernAccountPatch>;
+pub type ModernEIP160Patch = EIP160Patch<ModernAccountPatch>;
 
 static mut CUSTOM_INITIAL_NONCE: Option<U256> = None;
 
@@ -251,31 +251,31 @@ pub extern "C" fn sputnikvm_new_eip160(
 }
 
 #[no_mangle]
-pub extern "C" fn sputnikvm_new_morden_frontier(
+pub extern "C" fn sputnikvm_new_modern_frontier(
     transaction: c_transaction, header: c_header_params
 ) -> *mut Box<VM> {
-    sputnikvm_new::<MordenFrontierPatch>(transaction, header)
+    sputnikvm_new::<ModernFrontierPatch>(transaction, header)
 }
 
 #[no_mangle]
-pub extern "C" fn sputnikvm_new_morden_homestead(
+pub extern "C" fn sputnikvm_new_modern_homestead(
     transaction: c_transaction, header: c_header_params
 ) -> *mut Box<VM> {
-    sputnikvm_new::<MordenHomesteadPatch>(transaction, header)
+    sputnikvm_new::<ModernHomesteadPatch>(transaction, header)
 }
 
 #[no_mangle]
-pub extern "C" fn sputnikvm_new_morden_eip150(
+pub extern "C" fn sputnikvm_new_modern_eip150(
     transaction: c_transaction, header: c_header_params
 ) -> *mut Box<VM> {
-    sputnikvm_new::<MordenEIP150Patch>(transaction, header)
+    sputnikvm_new::<ModernEIP150Patch>(transaction, header)
 }
 
 #[no_mangle]
-pub extern "C" fn sputnikvm_new_morden_eip160(
+pub extern "C" fn sputnikvm_new_modern_eip160(
     transaction: c_transaction, header: c_header_params
 ) -> *mut Box<VM> {
-    sputnikvm_new::<MordenEIP160Patch>(transaction, header)
+    sputnikvm_new::<ModernEIP160Patch>(transaction, header)
 }
 
 #[no_mangle]
